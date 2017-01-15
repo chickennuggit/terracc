@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
+		<title>Terra CC</title>
 		<link rel="stylesheet" type="text/css" href="main.css"/>
 	</head>
 	<body>
@@ -14,6 +15,21 @@
 				<p>Attunement</p>
 				<input type="text" name="attunement" value="">
 				<input type="button" value="Surprise me!" onclick="giveAtn();">
+				<p>Dice Roller</p>
+				<select id="rollTimes" name="rollTimes"></select>
+				<b>D</b><select name="sides" id="sides">
+					<option value="4">4</option>
+					<option value="6">6</option>
+					<option value="8">8</option>
+					<option value="10">10</option>
+					<option value="12">12</option>
+					<option value="20">20</option>
+					<option value="100">100</option>
+				</select>
+				<input type="button" value="Roll" onclick="roll();">
+				<br>
+				<textarea rows="4" id="rollSeq"></textarea>
+				<input type="text" id="rollTot">
 			</form>
 		</div>
 		<script src="main.js"></script>

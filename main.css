@@ -6,3 +6,11 @@ form p {
 	font-weight: bold;
 	margin: 5px 0px;
 }
+
+form b {
+	padding-right: 5px;
+}
+
+textarea {
+	margin-top: 5px;
+}

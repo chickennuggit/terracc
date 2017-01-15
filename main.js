@@ -5,6 +5,12 @@ let lName = ['Moody','Davis','Milliken'];
 
 let atn = ['Fire', 'Ice', 'Cheese'];
 
+let mainCont = gbi('mainCont');
+let rollTimes = gbi('rollTimes');
+let sides = gbi('sides');
+let rollSeq = gbi('rollSeq');
+let rollTot = gbi('rollTot');
+
 function shuffle(array) {
     let counter = array.length;
 
@@ -59,6 +65,32 @@ function giveAtn() {
 	atnBox.value = atn[0];
 }
 
+function roll() {
+	let times = parseInt(rollTimes.value);
+	let dSides = parseInt(sides.value);
+	let x = [];
+	let t = 0;
+	rollSeq.value = '';
+	for(i=1; i!=dSides+1; i++) {
+		x.push(i);
+	}
+	for(i=1; i!=times+1; i++) {
+		x = shuffle(x);
+		t += x[0];
+		rollSeq.value += x[0]
+		rollSeq.value += ', '
+	}
+	rollTot.value = t;
+}
+
+function createRollTimes() {
+	let result;
+	for(i=1; i!=100; i++) {
+		result += '<option value="' + i + '">' + i + '</option>';
+	}
+	return result;
+}
+
 window.onload = function() {
-	let mainCont = gbi('mainCont');
+	ih(rollTimes, createRollTimes());
 }
